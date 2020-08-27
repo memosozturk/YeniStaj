@@ -1,7 +1,7 @@
 ﻿@model YeniStaj.Models.ViewModels.RegisterLoginViewModel
-@{
     Layout = null;
 }
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +14,7 @@
     <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
     <link rel="shortcut icon" href="~/Content/AdminLayout/img/favicon.png">
 
-    <title>Login</title>
+    <title>Register</title>
 
     <!-- Bootstrap CSS -->
     <link href="~/Content/AdminLayout/css/bootstrap.min.css" rel="stylesheet">
@@ -45,36 +45,59 @@
 
     <div class="container">
 
-        @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { @class = "login-form" }))
+        @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "login-form" }))
         {
+            @Html.AntiForgeryToken()
         <div class="login-wrap">
-            <p class="login-img"><i class="icon_lock_alt"></i></p>
+            <p class="login-img"><i class="icon_lock-open_alt"></i></p>
             <div class="input-group">
 
-                @Html.LabelFor(x => x.LoginViewModel.Email, new { @class = "sr-only", name = "Eposta" })
+                @Html.LabelFor(x => x.RegisterViewModel.Name, new { @class = "sr-only", name = "Name" })
                 <span class="input-group-addon"><i class="icon_profile"></i></span>
 
-                @Html.TextBoxFor(x => x.LoginViewModel.Email, new { @class = "form-control", placeholder = "Eposta" })
+                @Html.TextBoxFor(x => x.RegisterViewModel.Name, new { @class = "form-control", placeholder = "Ad" })
             </div>
             <div class="input-group">
 
-                @Html.LabelFor(x => x.LoginViewModel.Password, new { @class = "sr-only" })
+                @Html.LabelFor(x => x.RegisterViewModel.Surname, new { @class = "sr-only", name = "SurName" })
+                <span class="input-group-addon"><i class="icon_profile"></i></span>
+
+                @Html.TextBoxFor(x => x.RegisterViewModel.Surname, new { @class = "form-control", placeholder = "Soyad" })
+            </div>
+            <div class="input-group">
+
+                @Html.LabelFor(x => x.RegisterViewModel.Email, new { @class = "sr-only", name = "Eposta" })
+                <span class="input-group-addon"><i class="icon_profile"></i></span>
+
+                @Html.TextBoxFor(x => x.RegisterViewModel.Email, new { @class = "form-control", placeholder = "Eposta" })
+            </div>
+            <div class="input-group">
+
+                @Html.LabelFor(x => x.RegisterViewModel.Username, new { @class = "sr-only", name = "Username" })
+                <span class="input-group-addon"><i class="icon_profile"></i></span>
+
+                @Html.TextBoxFor(x => x.RegisterViewModel.Username, new { @class = "form-control", placeholder = "Kullanıcı Adı" })
+            </div>
+            <div class="input-group">
+
+                @Html.LabelFor(x => x.RegisterViewModel.Password, new { @class = "sr-only" })
                 <span class="input-group-addon"><i class="icon_key_alt"></i></span>
 
-                @Html.TextBoxFor(x => x.LoginViewModel.Password, new { @class = "form-control required", placeholder = "Şifre", Type = "password" })
+                @Html.TextBoxFor(x => x.RegisterViewModel.Password, new { @class = "form-control required", placeholder = "Şifre", Type = "password" })
             </div>
-            <div class="form-check">
-                <label for="RememberMe" class="css-input switch switch-sm switch-app">
-                    @Html.CheckBoxFor(x => x.LoginViewModel.RememberMe, new { @class = "form-check-input" })
-                    <label class="form-check-label" for="RememberMe">Beni Hatırla</label>
-                </label>
+            <div class="input-group">
+
+                @Html.LabelFor(x => x.RegisterViewModel.ConfirmPassword, new { @class = "sr-only" })
+                <span class="input-group-addon"><i class="icon_key_alt"></i></span>
+
+                @Html.TextBoxFor(x => x.RegisterViewModel.ConfirmPassword, new { @class = "form-control required", placeholder = "Şifre Tekrar", Type = "password" })
             </div>
-            <button class="btn btn-primary btn-lg btn-block" type="submit">Giriş Yap</button>
-            <input type="button" value="Create" onclick="location.href='@Url.Action("Register", "Account")'" />
+
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Kayıt ol</button>
 
         </div>
         }
-       
+
         <div class="text-right">
             <div class="credits">
                 <!--
