@@ -52,28 +52,28 @@
             <p class="login-img"><i class="icon_lock-open_alt"></i></p>
             <div class="input-group">
 
-                @Html.LabelFor(x => x.RegisterViewModel.Name, new { @class = "sr-only", name = "Name" })
+                @Html.LabelFor(x => x.RegisterViewModel.Name, new { @class = "sr-only" })
                 <span class="input-group-addon"><i class="icon_profile"></i></span>
 
                 @Html.TextBoxFor(x => x.RegisterViewModel.Name, new { @class = "form-control", placeholder = "Ad" })
             </div>
             <div class="input-group">
 
-                @Html.LabelFor(x => x.RegisterViewModel.Surname, new { @class = "sr-only", name = "SurName" })
+                @Html.LabelFor(x => x.RegisterViewModel.Surname, new { @class = "sr-only" })
                 <span class="input-group-addon"><i class="icon_profile"></i></span>
 
                 @Html.TextBoxFor(x => x.RegisterViewModel.Surname, new { @class = "form-control", placeholder = "Soyad" })
             </div>
             <div class="input-group">
 
-                @Html.LabelFor(x => x.RegisterViewModel.Email, new { @class = "sr-only", name = "Eposta" })
+                @Html.LabelFor(x => x.RegisterViewModel.Email, new { @class = "sr-only"})
                 <span class="input-group-addon"><i class="icon_profile"></i></span>
 
                 @Html.TextBoxFor(x => x.RegisterViewModel.Email, new { @class = "form-control", placeholder = "Eposta" })
             </div>
             <div class="input-group">
 
-                @Html.LabelFor(x => x.RegisterViewModel.Username, new { @class = "sr-only", name = "Username" })
+                @Html.LabelFor(x => x.RegisterViewModel.Username, new { @class = "sr-only"})
                 <span class="input-group-addon"><i class="icon_profile"></i></span>
 
                 @Html.TextBoxFor(x => x.RegisterViewModel.Username, new { @class = "form-control", placeholder = "Kullanıcı Adı" })
@@ -83,14 +83,14 @@
                 @Html.LabelFor(x => x.RegisterViewModel.Password, new { @class = "sr-only" })
                 <span class="input-group-addon"><i class="icon_key_alt"></i></span>
 
-                @Html.TextBoxFor(x => x.RegisterViewModel.Password, new { @class = "form-control required", placeholder = "Şifre", Type = "password" })
+                @Html.TextBoxFor(x => x.RegisterViewModel.Password, new { @class = "form-control",placeholder = "Şifre", Type = "password" })
             </div>
             <div class="input-group">
 
-                @Html.LabelFor(x => x.RegisterViewModel.ConfirmPassword, new { @class = "sr-only" })
+                @Html.LabelFor(x => x.RegisterViewModel.ConfirmPassword, new { @class = "sr-only"})
                 <span class="input-group-addon"><i class="icon_key_alt"></i></span>
 
-                @Html.TextBoxFor(x => x.RegisterViewModel.ConfirmPassword, new { @class = "form-control required", placeholder = "Şifre Tekrar", Type = "password" })
+                @Html.TextBoxFor(x => x.RegisterViewModel.ConfirmPassword, new { @class = "form-control" ,placeholder = "Şifre Tekrar", Type = "password" })
             </div>
 
             <button class="btn btn-primary btn-lg btn-block" type="submit">Kayıt ol</button>
