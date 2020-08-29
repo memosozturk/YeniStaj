@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using YeniStaj.Models.Entities;
 
 namespace YeniStaj.Models.IdentityModels
 {
@@ -16,5 +17,8 @@ namespace YeniStaj.Models.IdentityModels
         [Required]
         public String Surname { get; set; }
         public string AvatarPath { get; set; }
+        public int? Projeid { get; set; }
+        public Project ProjectUser { get; set; }
+
     }
 }

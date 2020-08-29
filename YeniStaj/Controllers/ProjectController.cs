@@ -3,15 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using YeniStaj.Models.Context;
+using YeniStaj.Models.Entities;
 
 namespace YeniStaj.Controllers
 {
-    public class ProjectController : Controller
+    public class ProjectController : BaseController
     {
+        MyContext db = new MyContext();
         // GET: Project
         public ActionResult Index()
         {
-            return View();
+            db.Configuration.LazyLoadingEnabled = false;
+            var sorgu = db.Projects.ToList();
+            return View(sorgu);
         }
 
         // GET: Project/Details/5
@@ -23,23 +28,33 @@ namespace YeniStaj.Controllers
         // GET: Project/Create
         public ActionResult Create()
         {
+            var kullanıcılar = GetUserList();
+
+            foreach (var selectListItem in kullanıcılar)
+            {
+
+                selectListItem.Selected = true;
+            }
+
+
+            ViewBag.Userlist = kullanıcılar;
             return View();
         }
 
         // POST: Project/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Project project)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add insert logic here
-
+                project.EklenmeTarihi = System.DateTime.Now;
+                db.Projects.Add(project);
+                db.SaveChanges();
                 return RedirectToAction("Index");
+
             }
-            catch
-            {
-                return View();
-            }
+
+            return View(project);
         }
 
         // GET: Project/Edit/5

@@ -1,0 +1,65 @@
+﻿@model List<YeniStaj.Models.Entities.Project>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="card">
+    <div class="card-header">
+        <a href="@Url.Action("Create","Project")"><i class="icon_profile"></i> Create Project</a>
+        <h4>Dynamic Table - Full</h4>
+    </div>
+    <div class="card-block">
+        <!-- DataTables init on table by adding .js-dataTable-full class, functionality initialized in js/pages/base_tables_datatables.js -->
+        <table id="example3" class="table table-bordered table-striped table-vcenter  nowrap display dataTable">
+            <thead>
+                <tr>
+                    <th class="text-center">#</th>
+                   
+                    <th>Project Name</th>
+                    <th>Description</th>
+                   
+                    <th>Create Time</th>
+                    <th class="text-center" style="width: 10%;">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < Model.Count; i++)
+                {
+                    var data = Model[i];
+                    <tr class="":"bg-red")">
+                        <td class="text-center">@(i + 1)</td>
+
+                       
+                      
+                        <td>@data.ProjeAdi</td>
+
+                        <td>@data.ProjeAciklama</td>
+                        <td>@data.EklenmeTarihi</td>
+                        
+                        <td class="text-center">
+                            <div class="btn-group">
+                                <button class="btn btn-xs btn-default btnsendcode" name="@data.Id" type="button" title="Send Activation Code">
+                                    <i class="ion-android-mail"></i>
+                                </button>
+                                <button class="btn btn-xs btn-default btnsendpassword" name="@data.Id" type="button" title="Send Password">
+                                    <i class="ion-key"></i>
+                                </button>
+
+                                <a href="@Url.Action("EditProject","Project", new {id = data.Id})" class="btn btn-xs btn-default" title="Edit Project">
+                                    <i class="ion-edit"></i>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <!-- .card-block -->
+</div>
+
+
+
+

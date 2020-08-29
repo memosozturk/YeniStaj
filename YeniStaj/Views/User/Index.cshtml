@@ -8,11 +8,13 @@
 <div class="card">
     <div class="card-header">
         <a href="@Url.Action("Create","User")"><i class="icon_profile"></i> Create User</a>
-        <h4>Dynamic Table - Full</h4>
+        <a href="@Url.Action("Export","User")">
+            <i class="icon_book_alt"></i>Export
+        </a>
     </div>
     <div class="card-block">
         <!-- DataTables init on table by adding .js-dataTable-full class, functionality initialized in js/pages/base_tables_datatables.js -->
-        <table class="table table-bordered table-striped table-vcenter dataTable">
+        <table id="example3"  class="table table-bordered table-striped table-vcenter  nowrap display dataTable">
             <thead>
                 <tr>
                     <th class="text-center">#</th>
@@ -29,7 +31,7 @@
                 @for (int i = 0; i < Model.Count; i++)
                 {
                     var data = Model[i];
-                    <tr class="@(data.EmailConfirmed?"":"bg-red")">
+                    <tr class="@(data.EmailConfirmed?"":"")">
                         <td class="text-center">@(i + 1)</td>
                         
                         <td class="text-center">

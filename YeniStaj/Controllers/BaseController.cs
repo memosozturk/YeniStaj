@@ -41,5 +41,6 @@ namespace YeniStaj.Controllers
                 });
             return data;
         }
+
     }
 }
