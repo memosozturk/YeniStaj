@@ -8,6 +8,6 @@ namespace YeniStaj.Models.ViewModels
     public class RegisterLoginViewModel
     {
         public LoginViewModel LoginViewModel { get; set; }
-        public RegisterViewModel RegisterViewModel { get; set; }
+        public LoginRegisterViewModel RegisterViewModel { get; set; }
     }
 }

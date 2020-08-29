@@ -15,5 +15,6 @@ namespace YeniStaj.Models.IdentityModels
         [StringLength(50)]
         [Required]
         public String Surname { get; set; }
+        public string AvatarPath { get; set; }
     }
 }

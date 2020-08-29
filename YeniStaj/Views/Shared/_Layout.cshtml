@@ -10,7 +10,7 @@
     <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
     <link rel="shortcut icon" href="~/Content/AdminLayout/img/favicon.png">
 
-    <title>Creative - Bootstrap Admin Template</title>
+    <title>@ViewBag.Title</title>
 
     <!-- Bootstrap CSS -->
     <link href="~/Content/AdminLayout/css/bootstrap.min.css" rel="stylesheet">
@@ -35,6 +35,12 @@
     <link href="~/Content/AdminLayout/css/style-responsive.css" rel="stylesheet" />
     <link href="~/Content/AdminLayout/css/xcharts.min.css" rel=" stylesheet">
     <link href="~/Content/AdminLayout/css/jquery-ui-1.10.4.min.css" rel="stylesheet">
+    <link href="~/Content/assets/css/app-custom.css" rel="stylesheet" />
+    <link href="~/Content/assets/css/app.css" rel="stylesheet" />
+    <link href="~/Content/assets/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/Content/assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/assets/css/ionicons.css" rel="stylesheet" />
+
     <!-- =======================================================
       Theme Name: NiceAdmin
       Theme URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
@@ -44,6 +50,7 @@
 </head>
 
 <body>
+    
     <!-- container section start -->
     <section id="container" class="">
 
@@ -54,7 +61,7 @@
             </div>
 
             <!--logo start-->
-            <a href="~/Content/AdminLayout/index.html" class="logo">Nice <span class="lite">Admin</span></a>
+            <a href="~/Home/Index/" class="logo">Memos <span class="lite">Admin</span></a>
             <!--logo end-->
 
             <div class="nav search-row" id="top_menu">
@@ -272,16 +279,14 @@
                     <!-- user login dropdown start-->
                     <li class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="~/Content/AdminLayout/#">
-                            <span class="profile-ava">
-                                <img alt="" src="~/Content/AdminLayout/img/avatar1_small.jpg">
-                            </span>
+                            
                             <span class="username">@MembershipTools.GetNameSurname(null)</span>
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu extended logout">
                             <div class="log-arrow-up"></div>
                             <li class="eborder-top">
-                                <a href="~/Content/AdminLayout/#"><i class="icon_profile"></i> My Profile</a>
+                                <a href="@Url.Action("UserProfile","Account")"><i class="icon_profile"></i> My Profile</a>
                             </li>
                            
                             <li>
@@ -302,9 +307,9 @@
                 <!-- sidebar menu start-->
                 <ul class="sidebar-menu">
                     <li class="active">
-                        <a class="" href="~/Content/AdminLayout/index.html">
+                        <a class="" href="/User/Index/">
                             <i class="icon_house_alt"></i>
-                            <span>Dashboard</span>
+                            <span>Users</span>
                         </a>
                     </li>
                     <li class="sub-menu">
@@ -313,13 +318,13 @@
                             <span>Forms</span>
                             <span class="menu-arrow arrow_carrot-right"></span>
                         </a>
-                        <ul class="sub-menu">
+                        <ul class="sub">
                             <li><a class="" href="~/Content/AdminLayout/form_component.html">Form Elements</a></li>
                             <li><a class="" href="~/Content/AdminLayout/form_validation.html">Form Validation</a></li>
                         </ul>
                     </li>
                     <li class="sub-menu">
-                        <a href="~/Content/AdminLayout/javascript:;" class="">
+                        <a href="javascript:;" class="">
                             <i class="icon_desktop"></i>
                             <span>UI Fitures</span>
                             <span class="menu-arrow arrow_carrot-right"></span>
@@ -337,39 +342,15 @@
                         </a>
                     </li>
                     <li>
-                        <a class="" href="~/Content/AdminLayout/chart-chartjs.html">
+                        <a class="" href="@Url.Action("UserProfile","Account")">
                             <i class="icon_piechart"></i>
-                            <span>Charts</span>
+                            <span>Profile</span>
 
                         </a>
 
                     </li>
 
-                    <li class="sub-menu">
-                        <a href="~/Content/AdminLayout/javascript:;" class="">
-                            <i class="icon_table"></i>
-                            <span>Tables</span>
-                            <span class="menu-arrow arrow_carrot-right"></span>
-                        </a>
-                        <ul class="sub">
-                            <li><a class="" href="~/Content/AdminLayout/basic_table.html">Basic Table</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="sub-menu">
-                        <a href="~/Content/AdminLayout/javascript:;" class="">
-                            <i class="icon_documents_alt"></i>
-                            <span>Pages</span>
-                            <span class="menu-arrow arrow_carrot-right"></span>
-                        </a>
-                        <ul class="sub">
-                            <li><a class="" href="~/Content/AdminLayout/profile.html">Profile</a></li>
-                            <li><a class="" href="~/Content/AdminLayout/login.html"><span>Login Page</span></a></li>
-                            <li><a class="" href="~/Content/AdminLayout/contact.html"><span>Contact Page</span></a></li>
-                            <li><a class="" href="~/Content/AdminLayout/blank.html">Blank Page</a></li>
-                            <li><a class="" href="~/Content/AdminLayout/404.html">404 Error</a></li>
-                        </ul>
-                    </li>
+                  
 
                 </ul>
                 <!-- sidebar menu end-->

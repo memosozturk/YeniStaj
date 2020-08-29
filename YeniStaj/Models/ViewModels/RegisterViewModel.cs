@@ -7,7 +7,7 @@ using System.Web;
 
 namespace YeniStaj.Models.ViewModels
 {
-    public class RegisterViewModel
+    public class LoginRegisterViewModel
     {
         [Required]
         [DisplayName("Ad")]
@@ -32,7 +32,7 @@ namespace YeniStaj.Models.ViewModels
         public String ConfirmPassword { get; set; }
         [Required]
         [DisplayName("Kullanıcı Adı")]
-        [StringLength(30,MinimumLength =5, ErrorMessage = "Kullanıcı adınız5 Karakterden Kısa 30 Karakterden Uzun olmamalıdır!")]
+        [StringLength(30,MinimumLength =5, ErrorMessage = "Kullanıcı adınız 5 Karakterden Kısa 30 Karakterden Uzun olmamalıdır!")]
         public String Username { get; set; }
     }
 }

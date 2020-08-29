@@ -36,5 +36,6 @@ namespace YeniStaj.Identity
             }
             return $"{user.Name} {user.Surname}";
         }
+        
     }
 }

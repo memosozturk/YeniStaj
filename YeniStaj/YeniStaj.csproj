@@ -608,6 +608,110 @@
     <Content Include="Content\AdminLayout\profile.html" />
     <Content Include="Content\AdminLayout\readme.txt" />
     <Content Include="Content\AdminLayout\widgets.html" />
+    <Content Include="Content\assets\audio\beep.mp3" />
+    <Content Include="Content\assets\css\app-custom.css" />
+    <Content Include="Content\assets\css\app.css" />
+    <Content Include="Content\assets\css\bootstrap.css" />
+    <Content Include="Content\assets\css\font-awesome.css" />
+    <Content Include="Content\assets\css\ionicons.css" />
+    <Content Include="Content\assets\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\assets\fonts\ionicons.svg" />
+    <Content Include="Content\assets\img\avatars\avatar1.jpg" />
+    <Content Include="Content\assets\img\avatars\avatar10.jpg" />
+    <Content Include="Content\assets\img\avatars\avatar11.jpg" />
+    <Content Include="Content\assets\img\avatars\avatar12.jpg" />
+    <Content Include="Content\assets\img\avatars\avatar2.jpg" />
+    <Content Include="Content\assets\img\avatars\avatar3.jpg" />
+    <Content Include="Content\assets\img\avatars\avatar4.jpg" />
+    <Content Include="Content\assets\img\avatars\avatar5.jpg" />
+    <Content Include="Content\assets\img\avatars\avatar6.jpg" />
+    <Content Include="Content\assets\img\avatars\avatar7.jpg" />
+    <Content Include="Content\assets\img\avatars\avatar8.jpg" />
+    <Content Include="Content\assets\img\avatars\avatar9.jpg" />
+    <Content Include="Content\assets\img\favicons\apple-touch-icon.png" />
+    <Content Include="Content\assets\img\favicons\favicon.ico" />
+    <Content Include="Content\assets\img\logo\logo-backend.png" />
+    <Content Include="Content\assets\img\logo\logo-frontend.png" />
+    <Content Include="Content\assets\img\misc\base_pages_profile_header_bg.jpg" />
+    <Content Include="Content\assets\img\misc\frontend_about1.png" />
+    <Content Include="Content\assets\img\misc\frontend_about2.png" />
+    <Content Include="Content\assets\img\misc\frontend_header_bg.png" />
+    <Content Include="Content\assets\img\misc\frontend_home1.png" />
+    <Content Include="Content\assets\img\misc\frontend_home2.png" />
+    <Content Include="Content\assets\img\misc\frontend_home3.png" />
+    <Content Include="Content\assets\img\misc\frontend_home4.png" />
+    <Content Include="Content\assets\img\No-Branding-Header-Background-1.jpg" />
+    <Content Include="Content\assets\img\photos\photo1.jpg" />
+    <Content Include="Content\assets\img\photos\photo2.jpg" />
+    <Content Include="Content\assets\img\photos\photo3.jpg" />
+    <Content Include="Content\assets\img\photos\photo4.jpg" />
+    <Content Include="Content\assets\img\photos\photo5.jpg" />
+    <Content Include="Content\assets\img\photos\photo6.jpg" />
+    <Content Include="Content\assets\js\app-custom.js" />
+    <Content Include="Content\assets\js\app.js" />
+    <Content Include="Content\assets\js\core\bootstrap.min.js" />
+    <Content Include="Content\assets\js\core\jquery.min.js" />
+    <Content Include="Content\assets\js\core\jquery.placeholder.min.js" />
+    <Content Include="Content\assets\js\core\jquery.scrollLock.min.js" />
+    <Content Include="Content\assets\js\core\jquery.slimscroll.min.js" />
+    <Content Include="Content\assets\js\pages\base_forms_validation.js" />
+    <Content Include="Content\assets\js\pages\base_forms_wizard.js" />
+    <Content Include="Content\assets\js\pages\base_js_charts_chartjs.js" />
+    <Content Include="Content\assets\js\pages\base_js_charts_flot.js" />
+    <Content Include="Content\assets\js\pages\base_js_charts_sparkline.js" />
+    <Content Include="Content\assets\js\pages\base_js_maps.js" />
+    <Content Include="Content\assets\js\pages\base_tables_datatables.js" />
+    <Content Include="Content\assets\js\pages\base_ui_progress.js" />
+    <Content Include="Content\assets\js\pages\frontend_contact.js" />
+    <Content Include="Content\assets\js\pages\index.js" />
+    <Content Include="Content\assets\js\plugins\bootstrap-colorpicker\bootstrap-colorpicker.min.js" />
+    <Content Include="Content\assets\js\plugins\bootstrap-colorpicker\css\bootstrap-colorpicker.min.css" />
+    <Content Include="Content\assets\js\plugins\bootstrap-colorpicker\img\bootstrap-colorpicker\alpha-horizontal.png" />
+    <Content Include="Content\assets\js\plugins\bootstrap-colorpicker\img\bootstrap-colorpicker\alpha.png" />
+    <Content Include="Content\assets\js\plugins\bootstrap-colorpicker\img\bootstrap-colorpicker\hue-horizontal.png" />
+    <Content Include="Content\assets\js\plugins\bootstrap-colorpicker\img\bootstrap-colorpicker\hue.png" />
+    <Content Include="Content\assets\js\plugins\bootstrap-colorpicker\img\bootstrap-colorpicker\saturation.png" />
+    <Content Include="Content\assets\js\plugins\bootstrap-datepicker\bootstrap-datepicker.min.js" />
+    <Content Include="Content\assets\js\plugins\bootstrap-datepicker\bootstrap-datepicker3.min.css" />
+    <Content Include="Content\assets\js\plugins\bootstrap-notify\bootstrap-notify.min.js" />
+    <Content Include="Content\assets\js\plugins\bootstrap-wizard\jquery.bootstrap.wizard.min.js" />
+    <Content Include="Content\assets\js\plugins\chartjs\Chart.min.js" />
+    <Content Include="Content\assets\js\plugins\datatables\jquery.dataTables.min.css" />
+    <Content Include="Content\assets\js\plugins\datatables\jquery.dataTables.min.js" />
+    <Content Include="Content\assets\js\plugins\dropzonejs\dropzone.min.css" />
+    <Content Include="Content\assets\js\plugins\dropzonejs\dropzone.min.js" />
+    <Content Include="Content\assets\js\plugins\flot\jquery.flot.min.js" />
+    <Content Include="Content\assets\js\plugins\flot\jquery.flot.pie.min.js" />
+    <Content Include="Content\assets\js\plugins\flot\jquery.flot.resize.min.js" />
+    <Content Include="Content\assets\js\plugins\flot\jquery.flot.stack.min.js" />
+    <Content Include="Content\assets\js\plugins\fullcalendar\fullcalendar.css" />
+    <Content Include="Content\assets\js\plugins\fullcalendar\fullcalendar.js" />
+    <Content Include="Content\assets\js\plugins\fullcalendar\fullcalendar.min.css" />
+    <Content Include="Content\assets\js\plugins\fullcalendar\fullcalendar.min.js" />
+    <Content Include="Content\assets\js\plugins\fullcalendar\fullcalendar.print.css" />
+    <Content Include="Content\assets\js\plugins\fullcalendar\gcal.js" />
+    <Content Include="Content\assets\js\plugins\fullcalendar\gcal.min.js" />
+    <Content Include="Content\assets\js\plugins\fullcalendar\lang-all.js" />
+    <Content Include="Content\assets\js\plugins\fullcalendar\moment.min.js" />
+    <Content Include="Content\assets\js\plugins\gmapsjs\gmaps.min.js" />
+    <Content Include="Content\assets\js\plugins\highlightjs\github-gist.min.css" />
+    <Content Include="Content\assets\js\plugins\highlightjs\highlight.pack.js" />
+    <Content Include="Content\assets\js\plugins\jquery-tags-input\jquery.tagsinput.min.css" />
+    <Content Include="Content\assets\js\plugins\jquery-tags-input\jquery.tagsinput.min.js" />
+    <Content Include="Content\assets\js\plugins\jquery-ui\jquery-ui.min.js" />
+    <Content Include="Content\assets\js\plugins\jquery-validation\jquery.validate.min.js" />
+    <Content Include="Content\assets\js\plugins\magnific-popup\magnific-popup.min.css" />
+    <Content Include="Content\assets\js\plugins\magnific-popup\magnific-popup.min.js" />
+    <Content Include="Content\assets\js\plugins\masked-inputs\jquery.maskedinput.min.js" />
+    <Content Include="Content\assets\js\plugins\select2\select2-bootstrap.css" />
+    <Content Include="Content\assets\js\plugins\select2\select2.full.min.js" />
+    <Content Include="Content\assets\js\plugins\select2\select2.min.css" />
+    <Content Include="Content\assets\js\plugins\slick\ajax-loader.gif" />
+    <Content Include="Content\assets\js\plugins\slick\fonts\slick.svg" />
+    <Content Include="Content\assets\js\plugins\slick\slick-theme.min.css" />
+    <Content Include="Content\assets\js\plugins\slick\slick.min.css" />
+    <Content Include="Content\assets\js\plugins\slick\slick.min.js" />
+    <Content Include="Content\assets\js\plugins\sparkline\jquery.sparkline.min.js" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -615,6 +719,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProjectController.cs" />
     <Compile Include="Controllers\TaskController.cs" />
@@ -622,6 +727,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\StringHelpers.cs" />
     <Compile Include="Identity\MembershipTools.cs" />
     <Compile Include="Migrations\202008271150049_ilk.cs" />
     <Compile Include="Migrations\202008271150049_ilk.designer.cs">
@@ -631,16 +737,24 @@
     <Compile Include="Migrations\202008280757134_ekle.designer.cs">
       <DependentUpon>202008280757134_ekle.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202008291039102_ekle1.cs" />
+    <Compile Include="Migrations\202008291039102_ekle1.designer.cs">
+      <DependentUpon>202008291039102_ekle1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Context\MyContext.cs" />
     <Compile Include="Models\Entities\Project.cs" />
     <Compile Include="Models\IdentityModels\Role.cs" />
     <Compile Include="Models\IdentityModels\User.cs" />
+    <Compile Include="Models\ViewModels\ChangePasswordViewModel.cs" />
     <Compile Include="Models\ViewModels\ErrorViewModel.cs" />
     <Compile Include="Models\ViewModels\LoginViewModel.cs" />
+    <Compile Include="Models\ViewModels\ProfilePasswordViewModel.cs" />
     <Compile Include="Models\ViewModels\RegisterLoginViewModel.cs" />
     <Compile Include="Models\ViewModels\RegisterViewModel.cs" />
+    <Compile Include="Models\ViewModels\UpdateUserRoleViewModel.cs" />
     <Compile Include="Models\ViewModels\UserIndex.cs" />
+    <Compile Include="Models\ViewModels\UserProfileViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -701,12 +815,32 @@
     <Content Include="Content\AdminLayout\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\AdminLayout\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\AdminLayout\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\assets\css\maps\app-custom.css.map" />
+    <Content Include="Content\assets\css\maps\app.css.map" />
+    <Content Include="Content\assets\css\maps\bootstrap.css.map" />
+    <Content Include="Content\assets\css\maps\font-awesome.css.map" />
+    <Content Include="Content\assets\css\maps\ionicons.css.map" />
+    <Content Include="Content\assets\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\assets\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\assets\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\assets\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\assets\fonts\FontAwesome.otf" />
+    <Content Include="Content\assets\fonts\ionicons.eot" />
+    <Content Include="Content\assets\fonts\ionicons.ttf" />
+    <Content Include="Content\assets\fonts\ionicons.woff" />
+    <Content Include="Content\assets\js\plugins\slick\fonts\slick.eot" />
+    <Content Include="Content\assets\js\plugins\slick\fonts\slick.ttf" />
+    <Content Include="Content\assets\js\plugins\slick\fonts\slick.woff" />
     <None Include="packages.config" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Home\Error.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Account\UserProfile.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\User\EditUser.cshtml" />
+    <Content Include="Views\User\Create.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -716,9 +850,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Base\" />
     <Folder Include="Views\Project\" />
     <Folder Include="Views\Task\" />
-    <Folder Include="Views\User\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202008271150049_ilk.resx">
@@ -726,6 +860,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202008280757134_ekle.resx">
       <DependentUpon>202008280757134_ekle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008291039102_ekle1.resx">
+      <DependentUpon>202008291039102_ekle1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
