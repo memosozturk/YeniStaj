@@ -1,10 +1,12 @@
 ﻿using Microsoft.AspNet.Identity;
+using Microsoft.Owin.Security;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI.WebControls;
 using YeniStaj.Models.Context;
 using YeniStaj.Models.IdentityModels;
 using YeniStaj.Models.ViewModels;
@@ -14,6 +16,7 @@ namespace YeniStaj.Controllers
 {
     public class AccountController : Controller
     {
+       
         
         // GET: Account
         public ActionResult Login()
@@ -21,6 +24,55 @@ namespace YeniStaj.Controllers
             if (HttpContext.GetOwinContext().Authentication.User.Identity.IsAuthenticated)
                 return RedirectToAction("Index", "Home");
             return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Login(RegisterLoginViewModel model)
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                {
+                    return View("Index",model);
+
+                }
+                var userManager = NewUserManager();
+                var user =await  userManager.FindAsync(model.LoginViewModel.Username,model.LoginViewModel.Password);
+                if (user==null)
+                {
+                    ModelState.AddModelError("","Kullanıcı Adı veya Şifre Hatalı");
+                    return View("Index",model);
+
+                }
+                var autManager = HttpContext.GetOwinContext().Authentication;
+                var userIdentity = await userManager.CreateIdentityAsync(user,DefaultAuthenticationTypes.ApplicationCookie);
+                autManager.SignIn(new AuthenticationProperties()
+                {
+                    IsPersistent = model.LoginViewModel.RememberMe
+                }, userIdentity);
+                
+                return RedirectToAction("Index","Home");
+            }
+            catch (Exception ex)
+            {
+
+                TempData["Model"] = new ErrorViewModel()
+                {
+                    Text = $"Bir hata oluştu {ex.Message}",
+                    ActionName = "Index",
+                    ControllerName = "Account",
+                    ErrorCode = 500
+                };
+                return RedirectToAction("Error", "Home");
+            }
+           
+        }
+        [HttpGet]
+        public ActionResult Logout()
+        {
+            var autManager = HttpContext.GetOwinContext().Authentication;
+            autManager.SignOut();
+            return RedirectToAction("Login");
         }
         [HttpGet]
         public ActionResult Register()

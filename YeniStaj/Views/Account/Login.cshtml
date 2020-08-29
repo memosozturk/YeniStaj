@@ -47,14 +47,15 @@
 
         @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { @class = "login-form" }))
         {
+            @Html.AntiForgeryToken()
         <div class="login-wrap">
             <p class="login-img"><i class="icon_lock_alt"></i></p>
             <div class="input-group">
 
-                @Html.LabelFor(x => x.LoginViewModel.Email, new { @class = "sr-only", name = "Eposta" })
+                @Html.LabelFor(x => x.LoginViewModel.Username, new { @class = "sr-only", name = "Username" })
                 <span class="input-group-addon"><i class="icon_profile"></i></span>
 
-                @Html.TextBoxFor(x => x.LoginViewModel.Email, new { @class = "form-control", placeholder = "Eposta" })
+                @Html.TextBoxFor(x => x.LoginViewModel.Username, new { @class = "form-control", placeholder = "Kullanıcı Adı" })
             </div>
             <div class="input-group">
 

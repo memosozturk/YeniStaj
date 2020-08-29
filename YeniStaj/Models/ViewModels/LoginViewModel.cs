@@ -10,9 +10,9 @@ namespace YeniStaj.Models.ViewModels
     public class LoginViewModel
     {
         [Required]
-        [DisplayName("Eposta")]
-        [DataType(DataType.EmailAddress)]
-        public String Email { get; set; }
+        [DisplayName("Username")]
+        
+        public String Username { get; set; }
         [StringLength(32,MinimumLength =8,ErrorMessage ="Şifreniz en az 8,en çok 32 karakter olmalıdır!")]
         [DisplayName("Şifre")]
         [DataType(DataType.Password)]
