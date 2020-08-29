@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using YeniStaj.Identity
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -274,7 +275,7 @@
                             <span class="profile-ava">
                                 <img alt="" src="~/Content/AdminLayout/img/avatar1_small.jpg">
                             </span>
-                            <span class="username">Jenifer Smith</span>
+                            <span class="username">@MembershipTools.GetNameSurname(null)</span>
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu extended logout">
@@ -282,24 +283,11 @@
                             <li class="eborder-top">
                                 <a href="~/Content/AdminLayout/#"><i class="icon_profile"></i> My Profile</a>
                             </li>
+                           
                             <li>
-                                <a href="~/Content/AdminLayout/#"><i class="icon_mail_alt"></i> My Inbox</a>
+                                <a href="@Url.Action("Logout","Account")"><i class="icon_key_alt"></i> Log Out</a>
                             </li>
-                            <li>
-                                <a href="~/Content/AdminLayout/#"><i class="icon_clock_alt"></i> Timeline</a>
-                            </li>
-                            <li>
-                                <a href="~/Content/AdminLayout/#"><i class="icon_chat_alt"></i> Chats</a>
-                            </li>
-                            <li>
-                                <a href="~/Content/AdminLayout/login.html"><i class="icon_key_alt"></i> Log Out</a>
-                            </li>
-                            <li>
-                                <a href="~/Content/AdminLayout/documentation.html"><i class="icon_key_alt"></i> Documentation</a>
-                            </li>
-                            <li>
-                                <a href="~/Content/AdminLayout/documentation.html"><i class="icon_key_alt"></i> Documentation</a>
-                            </li>
+                            
                         </ul>
                     </li>
                     <!-- user login dropdown end -->
