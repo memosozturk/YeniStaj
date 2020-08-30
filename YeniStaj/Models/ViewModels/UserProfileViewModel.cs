@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Web;
+using YeniStaj.Models.Entities;
 
 namespace YeniStaj.Models.ViewModels
 {
@@ -26,5 +27,6 @@ namespace YeniStaj.Models.ViewModels
 
         public string AvatarPath { get; set; }
         public HttpPostedFileBase PostedFile { get; set; }
+        public Project ProjectUser { get; set; }
     }
 }

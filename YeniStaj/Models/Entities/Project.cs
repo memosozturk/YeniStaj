@@ -4,12 +4,13 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
+using YeniStaj.Abstracts;
 using YeniStaj.Models.IdentityModels;
 
 namespace YeniStaj.Models.Entities
 {
     [Table("Projects")]
-    public class Project
+    public class Project:BaseEntity<int>
     {
         [Key]
         public int Id { get; set; }

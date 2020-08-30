@@ -61,6 +61,8 @@
     <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.3\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Build" />
+    <Reference Include="Microsoft.Build.Engine" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Owin, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Owin.4.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
@@ -716,6 +718,8 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstracts\BaseEntity.cs" />
+    <Compile Include="Abstracts\BaseEntity2.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -749,6 +753,10 @@
     <Compile Include="Migrations\202008291743072_ekle4.designer.cs">
       <DependentUpon>202008291743072_ekle4.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202008301052338_asd.cs" />
+    <Compile Include="Migrations\202008301052338_asd.designer.cs">
+      <DependentUpon>202008301052338_asd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Context\MyContext.cs" />
     <Compile Include="Models\Entities\Project.cs" />
@@ -765,6 +773,8 @@
     <Compile Include="Models\ViewModels\UserIndex.cs" />
     <Compile Include="Models\ViewModels\UserProfileViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\ProjectRepo.cs" />
+    <Compile Include="Repository\RepositoryBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -879,6 +889,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202008291743072_ekle4.resx">
       <DependentUpon>202008291743072_ekle4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008301052338_asd.resx">
+      <DependentUpon>202008301052338_asd.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

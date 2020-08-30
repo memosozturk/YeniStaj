@@ -38,6 +38,7 @@ namespace YeniStaj.Controllers
 
 
             ViewBag.Userlist = kullanıcılar;
+            ViewBag.ProjeList = GetProjectSelectList();
             return View();
         }
 
