@@ -11,7 +11,7 @@
 
         <div class="card-block tab-content">
             <!-- Profile tab 1 -->
-            <div class="tab-pane fade in active">
+            <div class="">
 
                 @using (Html.BeginForm("Create", "Project", FormMethod.Post, new { @class = "fieldset", enctype = "multipart/form-data" }))
                 {
@@ -29,8 +29,9 @@
                             @Html.TextBoxFor(x => x.ProjeAciklama, new { @class = "form-control" })
                         </div>
                     </div>
+                  
                     
-                    
+
                     <div class="row narrow-gutter">
                         <div class="col-xs-6">
                             <button type="submit" class="btn btn-app btn-block">Proje Oluştur</button>
@@ -40,22 +41,7 @@
             </div>
             <!-- End profile tab 1 -->
         </div>
-        <h3>@TempData["Message"]</h3>
-        <div class="card-block">
-            <div class="form-group">
-                @using (Html.BeginForm("Create", "Project", FormMethod.Post))
-                {
-                    @Html.AntiForgeryToken()
-
-                    @Html.Label("Users", new { @class = "col-md-3 control-label" })
-                    <div class="col-md-7">
-                        @Html.DropDownListFor(x=>x.ProjectUser, (List<SelectListItem>)ViewBag.Userlist, new { @class = "js-select2 form-control",  multiple = "multiple" })
-                    </div>
-                    <input type="submit" value="Projeye Kullanıcı Ekle" class="btn btn-action" />
-                }
-
-            </div>
-        </div>
+       
         <!-- .card-block .tab-content -->
     </div>
     <!-- .card -->

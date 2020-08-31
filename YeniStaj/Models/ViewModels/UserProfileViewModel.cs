@@ -27,6 +27,7 @@ namespace YeniStaj.Models.ViewModels
 
         public string AvatarPath { get; set; }
         public HttpPostedFileBase PostedFile { get; set; }
+        public int? Projeid { get; set; }
         public Project ProjectUser { get; set; }
     }
 }

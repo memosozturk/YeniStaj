@@ -1,18 +1,24 @@
 ﻿using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System;
 using System.Web;
 using YeniStaj.Models.Context;
+using YeniStaj.Models.Entities;
 using YeniStaj.Models.IdentityModels;
+
 
 namespace YeniStaj.Identity
 {
     public static class MembershipTools
     {
+       public static MyContext db = new MyContext();
         private static MyContext _db;
         public static UserStore<User> NewUserStore() => new UserStore<User>(_db ?? new MyContext());
         public static UserManager<User> NewUserManager() => new UserManager<User>(NewUserStore());
         public static RoleStore<Role> NewRoleStore() => new RoleStore<Role>(_db ?? new MyContext());
         public static RoleManager<Role> NewRoleManager() => new RoleManager<Role>(NewRoleStore());
+        public static ProjectStore<Project> NewProjectStore() => new ProjectStore<Project>(_db ?? new MyContext());
+        public static ProjectManager<Project> NewProjectManager() => new ProjectManager<Project>(NewProjectStore());
         public static string GetNameSurname(string userId)
         {
             User user;
@@ -36,6 +42,23 @@ namespace YeniStaj.Identity
             }
             return $"{user.Name} {user.Surname}";
         }
-        
+        public static String GetProjectName(int id)
+        {
+            Models.Entities.Project project;
+            project = db.Projects.Find(id);
+            string projeadii = project.ProjeAdi;
+            return projeadii;
+        }
+
+    }
+
+    public class ProjectStore<T>
+    {
+        private MyContext myContext;
+
+        public ProjectStore(MyContext myContext)
+        {
+            this.myContext = myContext;
+        }
     }
 }

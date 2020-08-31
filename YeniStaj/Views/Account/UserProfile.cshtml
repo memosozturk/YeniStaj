@@ -89,11 +89,11 @@
                 </div>
                 <!-- End profile tab 1 -->
                 <!-- Profile tab 2 -->
-                <div class="tab-pane fade" id="profile-tab2">
+                <div class="tab-pane" id="profile-tab2">
                     @using (Html.BeginForm("ChangePassword", "Account", FormMethod.Post, new { @class = "fieldset" }))
                     {
                         @Html.AntiForgeryToken()
-                        <h4 class="m-t-sm m-b">Profil Bilgileri</h4>
+                        <h4 class="m-t-sm m-b">Şifre Bilgileri</h4>
                         <div class="form-group row">
                             <div class="col-xs-6">
                                 @Html.LabelFor(x => x.ChangePasswordViewModel.OldPassword)

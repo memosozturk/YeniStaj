@@ -5,16 +5,19 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using YeniStaj.Identity;
+using YeniStaj.Models.Context;
 using YeniStaj.Models.Entities;
 using YeniStaj.Models.ViewModels;
 using YeniStaj.Repository;
 
 namespace YeniStaj.Controllers
 {
+    
     public class BaseController : Controller
     {
+        MyContext db = new MyContext();
         // GET: Base
-        
+
         protected List<SelectListItem> GetUserList()
         {
             var data = new List<SelectListItem>();
@@ -46,28 +49,28 @@ namespace YeniStaj.Controllers
             return data;
         }
 
-
+       
         protected List<SelectListItem> GetProjectSelectList()
         {
             var projects = new ProjectRepo()
-                .GetAll(x => x.Id == null)
-                .OrderBy(x => x.ProjeAdi);
+                .GetAll()
+                ;
             var list = new List<SelectListItem>()
             {
                 new SelectListItem()
                 {
                     Text = "Üst Projesi yok",
-                    Value = "0"
+                    Value = "XX"
                 }
             };
-            foreach (var Project in projects)
+            foreach (var project in projects)
             {
-                if (Project.ProjeAdi.Any())
+                if (project.ProjeAdi.Any())
                 {
                     list.Add(new SelectListItem()
                     {
-                        Text = Project.ProjeAdi,
-                        Value = Project.Id.ToString()
+                        Text = project.ProjeAdi,
+                        Value = project.Id.ToString()
                     });
                     
                 }
@@ -75,12 +78,13 @@ namespace YeniStaj.Controllers
                 {
                     list.Add(new SelectListItem()
                     {
-                        Text =Project.ProjeAdi,
-                        Value = Project.Id.ToString()
+                        Text =project.ProjeAdi,
+                        Value = project.Id.ToString()
                     });
 
                     
                 }
+               
             }
                 return list;
 

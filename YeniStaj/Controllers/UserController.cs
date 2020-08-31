@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -49,8 +50,10 @@ namespace YeniStaj.Controllers
                             selectListItem.Selected = true;
                     }
                 }
+                ViewBag.ProjeList = GetProjectSelectList();
 
                 ViewBag.RoleList = roller;
+
 
 
                 var model = new UserProfileViewModel()
@@ -61,7 +64,10 @@ namespace YeniStaj.Controllers
                     Surname = user.Surname,
                     Id = user.Id,
                     PhoneNumber = user.PhoneNumber,
-                    UserName = user.UserName
+                    UserName = user.UserName,
+                    ProjectUser=user.ProjectUser,
+                    Projeid=user.Projeid
+                    
                 };
                 return View(model);
             }
@@ -89,6 +95,8 @@ namespace YeniStaj.Controllers
 
             try
             {
+                
+                
                 var userManager = NewUserManager();
                 var user = await userManager.FindByIdAsync(model.Id);
 
@@ -96,6 +104,8 @@ namespace YeniStaj.Controllers
                 user.Surname = model.Surname;
                 user.PhoneNumber = model.PhoneNumber;
                 user.Email = model.Email;
+                user.Projeid = model.Projeid;
+                user.ProjectUser = model.ProjectUser;
 
                 if (model.PostedFile != null &&
                     model.PostedFile.ContentLength > 0)
@@ -122,6 +132,7 @@ namespace YeniStaj.Controllers
                     System.IO.File.Delete(Server.MapPath(oldPath));
                 }
                 await userManager.UpdateAsync(user);
+                ViewBag.ProjeList = GetProjectSelectList();
                 TempData["Message"] = "Güncelleme işlemi başarılı";
                 return RedirectToAction("EditUser", new { id = user.Id });
             }
@@ -166,6 +177,7 @@ namespace YeniStaj.Controllers
             userManager.AddToRole(userId, seciliRoller[i]);
         }
             TempData["Message"] = "Güncelleme işlemi başarılı";
+            ViewBag.ProjeList = GetProjectSelectList();
 
             return RedirectToAction("EditUser", new { id = userId });
     }

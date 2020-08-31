@@ -733,6 +733,7 @@
     </Compile>
     <Compile Include="Helpers\StringHelpers.cs" />
     <Compile Include="Identity\MembershipTools.cs" />
+    <Compile Include="Identity\ProjectManager.cs" />
     <Compile Include="Migrations\202008271150049_ilk.cs" />
     <Compile Include="Migrations\202008271150049_ilk.designer.cs">
       <DependentUpon>202008271150049_ilk.cs</DependentUpon>
@@ -862,6 +863,7 @@
     <Content Include="Views\User\Create.cshtml" />
     <Content Include="Views\Project\Index.cshtml" />
     <Content Include="Views\Project\Create.cshtml" />
+    <Content Include="Views\Project\Delete.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
