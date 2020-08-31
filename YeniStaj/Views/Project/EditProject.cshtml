@@ -1,0 +1,41 @@
+﻿@model YeniStaj.Models.ViewModels.ProjectIndexViewModel
+@{
+    ViewBag.Title = "EditProject";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>EditProject</h2>
+<div class="card-block tab-content">
+    <!-- Profile tab 1 -->
+    <div class="">
+
+        @using (Html.BeginForm("EditProject", "Project", FormMethod.Post, new { @class = "fieldset", enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.HiddenFor(x => x.Id)
+
+           
+            <h4 class="m-t-sm m-b">Proje Bilgileri</h4>
+            <div class="form-group row">
+                
+                <div class="col-xs-6">
+                    @Html.LabelFor(x => x.ProjeAdi)
+                    @Html.TextBoxFor(x => x.ProjeAdi, new { @class = "form-control" })
+                </div>
+                <div class="col-xs-6">
+                    @Html.LabelFor(x => x.ProjeAciklama)
+                    @Html.TextBoxFor(x => x.ProjeAciklama, new { @class = "form-control" })
+                </div>
+            </div>
+            
+            
+            <div class="row narrow-gutter">
+                <div class="col-xs-6">
+                    <button type="submit" class="btn btn-app btn-block">Güncelle</button>
+                </div>
+            </div>
+        }
+    </div>
+    <!-- End profile tab 1 -->
+</div>
+

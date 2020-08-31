@@ -1,0 +1,78 @@
+﻿@model YeniStaj.Models.ViewModels.TaskViewModel
+@{
+    ViewBag.Title = "EditTask";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>EditTask</h2>
+<div class="card-block tab-content">
+    <!-- Profile tab 1 -->
+    <div class="">
+
+        @using (Html.BeginForm("EditTask", "Task", FormMethod.Post, new { @class = "fieldset", enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.HiddenFor(x => x.Taskid)
+
+
+            <h4 class="m-t-sm m-b">Task Bilgileri</h4>
+            <div class="form-group row">
+
+                <div class="col-xs-6">
+                    @Html.LabelFor(x => x.TaskBaslik)
+                    @Html.TextBoxFor(x => x.TaskBaslik, new { @class = "form-control" })
+                </div>
+                <div class="col-xs-6">
+                    @Html.LabelFor(x => x.TaskAciklama)
+                    @Html.TextBoxFor(x => x.TaskAciklama, new { @class = "form-control" })
+                </div>
+
+                <div class="col-xs-6">
+                    @Html.LabelFor(x => x.TaskTeslimTarihi)
+                    <input class="form-control" type="datetime-local" value="" id="TaskTeslimTarihi" name="TaskTeslimTarihi" >
+                    @*@Html.EditorFor(model => model.TaskTeslimTarihi, new { htmlAttributes = new { @class = "form-control", Type="datetime-local", id = "TaskTeslimTarihi"  ,name= "TaskTeslimTarihi" } })*@
+                </div>
+
+
+            </div>
+            @*<div class="col-xs-6">
+                @Html.LabelFor(model => model.Projeid, htmlAttributes: new { @class = "control-label " })
+
+                @Html.DropDownListFor(model => model.Projeid, (List<SelectListItem>)ViewBag.ProjeList, new { htmlAttributes = new { @class = "form-control dropdown" } })
+
+
+
+            </div>*@
+
+            <div class="row narrow-gutter">
+                <div class="col-xs-6">
+                    <button onclick="compare()" class="btn btn-app btn-block" id="butonkontrol">Task Güncelle</button>
+                </div>
+            </div>
+        }
+    </div>
+    <!-- End profile tab 1 -->
+</div>
+
+<script>
+    function compare() {
+
+        var startDt = Date();
+        var startDt = new Date(startDt);
+        var endDt = document.getElementById("TaskTeslimTarihi").value;
+        var endDt = new Date(endDt);
+        var btn = document.getElementById("butonkontrol");
+
+        if (startDt > endDt) {
+            alert("Girilen tarih bugünden küçük olamaz");
+            btn.setAttribute("type", "reset");
+
+        }
+        else {
+
+            btn.setAttribute("type", "submit");
+        }
+
+
+    }
+</script>

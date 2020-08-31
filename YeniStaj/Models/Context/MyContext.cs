@@ -25,6 +25,7 @@ namespace YeniStaj.Models.Context
         base.OnModelCreating(modelBuilder);
     }
         public virtual DbSet<Project> Projects { get; set; }
+        public virtual DbSet<Task> Tasks { get; set; }
 
     }
 

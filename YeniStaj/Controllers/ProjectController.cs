@@ -77,7 +77,7 @@ namespace YeniStaj.Controllers
 
         // POST: Project/Edit/5
         [HttpPost]
-        public ActionResult Edit(ProjectIndexViewModel model)
+        public ActionResult EditProject(ProjectIndexViewModel model)
         {
             if (!ModelState.IsValid)
             {
@@ -91,14 +91,21 @@ namespace YeniStaj.Controllers
                 project.ProjeAciklama = model.ProjeAciklama;
                 db.SaveChanges();
                 TempData["Message"] = "Güncelleme işlemi başarılı";
-                return RedirectToAction("EditUser", new { id = project.Id });
+                return RedirectToAction("Index","Project");
                 // TODO: Add update logic here
 
-                return RedirectToAction("Index");
+               
             }
-            catch
+            catch(Exception ex)
             {
-                return View();
+                TempData["Model"] = new ErrorViewModel()
+                {
+                    Text = $"Bir hata oluştu {ex.Message}",
+                    ActionName = "Index",
+                    ControllerName = "Admin",
+                    ErrorCode = 500
+                };
+                return RedirectToAction("Error", "Home");
             }
         }
 

@@ -1,0 +1,87 @@
+﻿@model YeniStaj.Models.Entities.Task
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-md-12">
+    <h3>@TempData["Message"]</h3>
+    @Html.ValidationSummary()
+    <div class="card">
+
+        <div class="card-block tab-content">
+            <!-- Profile tab 1 -->
+            <div class="">
+
+                @using (Html.BeginForm("Create", "Task", FormMethod.Post, new { @class = "fieldset", enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+
+                    <h4 class="m-t-sm m-b">Task Oluştur</h4>
+                    <div class="form-group row">
+                        <div class="col-xs-6">
+
+                            @Html.LabelFor(x => x.TaskBaslik)
+                            @Html.TextBoxFor(x => x.TaskBaslik, new { @class = "form-control" })
+                        </div>
+                        <div class="col-xs-6">
+                            @Html.LabelFor(x => x.TaskAciklama)
+                            @Html.TextBoxFor(x => x.TaskAciklama, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-xs-6">
+                            @Html.LabelFor(x => x.TaskTeslimTarihi)
+                            <input class="form-control" type="datetime-local" value="" id="TaskTeslimTarihi" name="TaskTeslimTarihi" required >
+                            @*<button onclick="compare()" type="reset">asdsa</button>*@
+                        </div>
+                        
+
+                    </div>
+                    <div class="form-group row">
+                        @Html.LabelFor(model => model.Projeid, htmlAttributes: new { @class = "control-label " })
+                        <div class="col-xs-6">
+                            @Html.DropDownListFor(model => model.Projeid, (List<SelectListItem>)ViewBag.ProjeList, new { htmlAttributes = new { @class = "form-control dropdown" } })
+
+
+
+                        </div>
+                    </div>
+
+                    <div class="row narrow-gutter">
+                        <div class="col-xs-6">
+                            <button   onclick="compare()" class="btn btn-app btn-block" id="butonkontrol" >Task Oluştur</button>
+                        </div>
+                    </div>
+                }
+            </div>
+            <!-- End profile tab 1 -->
+        </div>
+       
+        
+        <!-- .card-block .tab-content -->
+    </div>
+    <!-- .card -->
+</div>
+<script>
+    function compare() {
+        
+        var startDt = Date();
+        var startDt = new Date(startDt);
+        var endDt = document.getElementById("TaskTeslimTarihi").value;
+        var endDt = new Date(endDt);
+        var btn = document.getElementById("butonkontrol");
+
+        if (startDt > endDt) {
+            alert("Girilen tarih bugünden küçük olamaz");
+            btn.setAttribute("type", "reset");
+
+        }
+        else {
+        
+        btn.setAttribute("type","submit");
+        }
+
+         
+        }
+</script>
