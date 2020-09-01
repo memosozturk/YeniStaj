@@ -766,6 +766,10 @@
     <Compile Include="Migrations\202008311129064_init.designer.cs">
       <DependentUpon>202008311129064_init.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202009011238433_init1.cs" />
+    <Compile Include="Migrations\202009011238433_init1.designer.cs">
+      <DependentUpon>202009011238433_init1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Context\MyContext.cs" />
     <Compile Include="Models\Entities\Project.cs" />
@@ -913,6 +917,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202008311129064_init.resx">
       <DependentUpon>202008311129064_init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009011238433_init1.resx">
+      <DependentUpon>202009011238433_init1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

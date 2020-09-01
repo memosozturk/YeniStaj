@@ -19,34 +19,34 @@
             <div class="form-group row">
 
                 <div class="col-xs-6">
-                    @Html.LabelFor(x => x.TaskBaslik)
-                    @Html.TextBoxFor(x => x.TaskBaslik, new { @class = "form-control" })
+                    @Html.LabelFor(model=>model.TaskBaslik)
+                    @Html.TextBoxFor(model=> model.TaskBaslik, new { @class = "form-control" })
                 </div>
                 <div class="col-xs-6">
-                    @Html.LabelFor(x => x.TaskAciklama)
-                    @Html.TextBoxFor(x => x.TaskAciklama, new { @class = "form-control" })
+                    @Html.LabelFor(model => model.TaskAciklama)
+                    @Html.TextBoxFor(model => model.TaskAciklama, new { @class = "form-control" })
                 </div>
 
                 <div class="col-xs-6">
-                    @Html.LabelFor(x => x.TaskTeslimTarihi)
-                    <input class="form-control" type="datetime-local" value="" id="TaskTeslimTarihi" name="TaskTeslimTarihi" >
-                    @*@Html.EditorFor(model => model.TaskTeslimTarihi, new { htmlAttributes = new { @class = "form-control", Type="datetime-local", id = "TaskTeslimTarihi"  ,name= "TaskTeslimTarihi" } })*@
+                    @Html.LabelFor(model => model.TaskTeslimTarihi)
+                    @*<input class="form-control" type="datetime-local" value="" id="TaskTeslimTarihi" name="TaskTeslimTarihi" >*@
+                    @Html.EditorFor(model => model.TaskTeslimTarihi, new { htmlAttributes = new { @class = "form-control", Type="datetime-local", id = "TaskTeslimTarihi"  ,name= "TaskTeslimTarihi" } })
                 </div>
 
 
             </div>
-            @*<div class="col-xs-6">
+            <div class="col-xs-6">
                 @Html.LabelFor(model => model.Projeid, htmlAttributes: new { @class = "control-label " })
 
-                @Html.DropDownListFor(model => model.Projeid, (List<SelectListItem>)ViewBag.ProjeList, new { htmlAttributes = new { @class = "form-control dropdown" } })
+                @Html.DropDownListFor(model=>model.Projeid, (List<SelectListItem>)ViewBag.ProjeList, new { htmlAttributes = new { @class = "form-control dropdown" } })
 
 
 
-            </div>*@
+            </div>
 
             <div class="row narrow-gutter">
                 <div class="col-xs-6">
-                    <button onclick="compare()" class="btn btn-app btn-block" id="butonkontrol">Task Güncelle</button>
+                    <button onclick="" type="submit" class="btn btn-app btn-block" id="butonkontrol">Task Güncelle</button>
                 </div>
             </div>
         }
