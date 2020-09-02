@@ -26,6 +26,7 @@ namespace YeniStaj.Models.Context
     }
         public virtual DbSet<Project> Projects { get; set; }
         public virtual DbSet<Task> Tasks { get; set; }
+        public virtual DbSet<TaskState> TaskStates { get; set; }
 
     }
 

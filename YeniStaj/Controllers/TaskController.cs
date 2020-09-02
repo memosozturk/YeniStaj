@@ -1,11 +1,14 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using YeniStaj.Models.Context;
 using YeniStaj.Models.Entities;
+using YeniStaj.Models.IdentityModels;
 using YeniStaj.Models.ViewModels;
+using static YeniStaj.Identity.MembershipTools;
 
 namespace YeniStaj.Controllers
 {
@@ -15,6 +18,7 @@ namespace YeniStaj.Controllers
         // GET: Task
         public ActionResult Index()
         {
+            
             db.Configuration.LazyLoadingEnabled = false;
             var sorgu = db.Tasks.ToList();
             return View(sorgu);
@@ -29,6 +33,7 @@ namespace YeniStaj.Controllers
         // GET: Task/Create
         public ActionResult Create()
         {
+            ViewBag.TaskStateList = GetTaskStateSelectList();
             ViewBag.ProjeList = GetProjectSelectList();
             return View();
         }
@@ -40,6 +45,10 @@ namespace YeniStaj.Controllers
             if (ModelState.IsValid)
             {
                 task.TaskOlusturmaTarihi = System.DateTime.Now;
+                task.TaskStateId = 1;
+                task.TaskDurumu = "Waiting";
+                
+                
                 db.Tasks.Add(task);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -52,6 +61,7 @@ namespace YeniStaj.Controllers
         // GET: Task/Edit/5
         public ActionResult EditTask(int id)
         {
+            ViewBag.TaskStateList = GetTaskStateSelectList();
             ViewBag.ProjeList = GetProjectSelectList();
             var task = db.Tasks.Find(id);
             if (task==null)
@@ -65,6 +75,9 @@ namespace YeniStaj.Controllers
                 TaskBaslik=task.TaskBaslik,
                 TaskAciklama=task.TaskAciklama,
                 TaskTeslimTarihi=task.TaskTeslimTarihi,
+                TaskStateId=task.TaskStateId,
+               
+                
                 Projeid = task.Projeid,
                 project=task.project
 
@@ -89,6 +102,8 @@ namespace YeniStaj.Controllers
                 task.TaskBaslik = model.TaskBaslik;
                 task.TaskAciklama = model.TaskAciklama;
                 task.TaskTeslimTarihi = model.TaskTeslimTarihi;
+                task.TaskStateId = model.TaskStateId;
+                task.TaskDurumu = task.TaskDurumu;
                 task.Projeid = model.Projeid;
                 task.project = model.project;
                 db.SaveChanges();
@@ -128,6 +143,22 @@ namespace YeniStaj.Controllers
             {
                 return View();
             }
+        }
+        [HttpGet]
+        public ActionResult ProjeTask()
+        {
+
+            var id = HttpContext.GetOwinContext().Authentication.User.Identity.GetUserId();
+            var user = NewUserManager().FindById(id);
+
+            
+            var abc = db.Tasks.Where(x => x.Projeid ==user.Projeid).ToList();
+            return View(abc);
+        }
+        [HttpPost]
+        public ActionResult ProjeTask(TaskViewModel model)
+        {
+            return View();
         }
     }
 }

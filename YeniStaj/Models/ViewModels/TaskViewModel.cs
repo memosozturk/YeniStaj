@@ -23,5 +23,7 @@ namespace YeniStaj.Models.ViewModels
         public DateTime TaskTeslimTarihi { get; set; }
         public int Projeid { get; set; }
         public Project project { get; set; }
+        public int TaskStateId { get; set; }
+        public TaskState taskstate { get; set; }
     }
 }

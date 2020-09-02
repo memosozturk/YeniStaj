@@ -23,6 +23,7 @@
                     <td>Proje Adı</td>
                     <td>Task Olusturma Tarihi</td>
                     <td>Task Teslim Tarihi</td>
+                    <td>Task Durumu</td>
                     <th class="text-center" style="width: 10%;">Actions</th>
                 </tr>
             </thead>
@@ -41,6 +42,7 @@
                 
                     <td>@data.TaskOlusturmaTarihi</td>
                     <td>@data.TaskTeslimTarihi</td>
+                    <td>@MembershipTools.GetTaskStateName(Convert.ToInt32(data.TaskStateId))</td>
 
 
 

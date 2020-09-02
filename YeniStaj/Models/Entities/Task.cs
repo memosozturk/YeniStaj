@@ -24,6 +24,8 @@ namespace YeniStaj.Models.Entities
         [DisplayName("Task Teslim Tarihi")]
         [Column(TypeName = "datetime2")]
         public DateTime TaskTeslimTarihi { get; set; }
+        public int TaskStateId { get; set; }
+        public String TaskDurumu { get; set; }
 
         // public Users users { get; set; }
         public int Projeid { get; set; }

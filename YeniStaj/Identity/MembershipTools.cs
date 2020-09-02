@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System;
+using System.Drawing;
 using System.Web;
 using YeniStaj.Models.Context;
 using YeniStaj.Models.Entities;
@@ -41,6 +42,17 @@ namespace YeniStaj.Identity
 
             }
             return $"{user.Name} {user.Surname}";
+        }
+        public static String GetTaskStateName(int id)
+        {
+            Models.Entities.TaskState taskState;
+            taskState = db.TaskStates.Find(id);
+            string stateadi = taskState.TaskDurumu;
+            if (String.IsNullOrEmpty(stateadi))
+            {
+                return "null";
+            }
+            return stateadi;
         }
         public static String GetProjectName(int id)
         {

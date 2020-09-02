@@ -48,7 +48,17 @@ namespace YeniStaj.Controllers
                 });
             return data;
         }
+        protected List<SelectListItem> GetTaskStateSelectList()
+        {
+            List<SelectListItem> degerler = (from x in db.TaskStates.ToList()
+                                             select new SelectListItem
+                                             {
+                                                 Text = x.TaskDurumu,
+                                                 Value = x.TaskStateId.ToString()
+                                             }).ToList();
 
+            return degerler;
+        }
        
         protected List<SelectListItem> GetProjectSelectList()
         {
