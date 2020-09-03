@@ -784,6 +784,18 @@
     <Compile Include="Migrations\202009021012345_taskdurumuekleas.designer.cs">
       <DependentUpon>202009021012345_taskdurumuekleas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202009031109010_userekle.cs" />
+    <Compile Include="Migrations\202009031109010_userekle.designer.cs">
+      <DependentUpon>202009031109010_userekle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009031119538_userekleasd.cs" />
+    <Compile Include="Migrations\202009031119538_userekleasd.designer.cs">
+      <DependentUpon>202009031119538_userekleasd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009031126495_userekleasdasd.cs" />
+    <Compile Include="Migrations\202009031126495_userekleasdasd.designer.cs">
+      <DependentUpon>202009031126495_userekleasdasd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Context\MyContext.cs" />
     <Compile Include="Models\Entities\Project.cs" />
@@ -900,6 +912,9 @@
     <Content Include="Views\Task\Create.cshtml" />
     <Content Include="Views\Task\EditTask.cshtml" />
     <Content Include="Views\Task\ProjeTask.cshtml" />
+    <Content Include="Views\Task\WaitingTask.cshtml" />
+    <Content Include="Views\Task\WorkingTask.cshtml" />
+    <Content Include="Views\Task\TaskDeliver.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -947,6 +962,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202009021012345_taskdurumuekleas.resx">
       <DependentUpon>202009021012345_taskdurumuekleas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009031109010_userekle.resx">
+      <DependentUpon>202009031109010_userekle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009031119538_userekleasd.resx">
+      <DependentUpon>202009031119538_userekleasd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009031126495_userekleasdasd.resx">
+      <DependentUpon>202009031126495_userekleasdasd.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

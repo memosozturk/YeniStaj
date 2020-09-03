@@ -1,0 +1,44 @@
+﻿@model YeniStaj.Models.ViewModels.TaskViewModel
+    @using YeniStaj.Identity
+@{
+    ViewBag.Title = "TaskDeliver";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>TaskDeliver</h2>
+
+<div class="card-block tab-content">
+    <!-- Profile tab 1 -->
+    <div class="">
+
+        @using (Html.BeginForm("TaskDeliver", "Task", FormMethod.Post, new { @class = "fieldset", enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+           
+
+
+            <h4 class="m-t-sm m-b">Task Bilgileri</h4>
+            <div class="form-group row">
+
+
+                <div class="col-xs-6">
+                    @Html.LabelFor(model => model.GeriBildirim, htmlAttributes: new { @class = "control-label " })
+
+                    @Html.EditorFor(model => model.GeriBildirim, new { htmlAttributes = new { @class = "form-control " } })
+
+
+
+                </div>
+            </div>
+            <div class="row narrow-gutter">
+                <div class="col-xs-6">
+                    <button type="submit" class="btn btn-app btn-block">Task Güncelle</button>
+                </div>
+            </div>
+
+
+
+        }
+    </div>
+    <!-- End profile tab 1 -->
+</div>

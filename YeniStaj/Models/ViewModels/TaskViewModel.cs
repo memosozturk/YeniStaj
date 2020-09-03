@@ -25,5 +25,12 @@ namespace YeniStaj.Models.ViewModels
         public Project project { get; set; }
         public int TaskStateId { get; set; }
         public TaskState taskstate { get; set; }
+        public String   Username { get; set; }
+        [DisplayName("Geri bildirim Tarihi")]
+        [Column(TypeName = "datetime2")]
+        public DateTime GeriBildirimTarihi { get; set; }
+        [DisplayName("Geri bildirim")]
+        public String GeriBildirim { get; set; }
+
     }
 }

@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
+using YeniStaj.Models.IdentityModels;
 
 namespace YeniStaj.Models.Entities
 {
@@ -27,7 +28,12 @@ namespace YeniStaj.Models.Entities
         public int TaskStateId { get; set; }
         public String TaskDurumu { get; set; }
 
-        // public Users users { get; set; }
+        public String Username { get; set; }
+        public String GeriBildirim { get; set; }
+        [DisplayName("Geribildirim Tarihi")]
+        [Column(TypeName = "datetime2")]
+        public DateTime GeribildirimTarihi { get; set; }
+        
         public int Projeid { get; set; }
         public Project project { get; set; }
     }

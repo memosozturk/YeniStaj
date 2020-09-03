@@ -1,11 +1,11 @@
 ﻿@Model YeniStaj.Models.ViewModels.TaskViewModel
-    @using YeniStaj.Identity
+@using YeniStaj.Identity
 @{
     ViewBag.Title = "ProjeTask";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>ProjeTask</h2>
+<h2>Waiting Tasks</h2>
 
 <div class="card-block">
     <!-- DataTables init on table by adding .js-dataTable-full class, functionality initialized in js/pages/base_tables_datatables.js -->
@@ -43,7 +43,7 @@
 
                     <td class="text-center">
                         <div class="btn-group">
-                            <a href="@Url.Action("TakeTask","Task", new {id = data.Taskid})" class="btn btn-xs btn-default btnsendcode" name="@data.Taskid" type="button" title="Delete">
+                            <a href="@Url.Action("TakeTask","Task",new { id = data.Taskid })" class="btn btn-xs btn-default btnsendcode" name="@data.Taskid" type="button" title="TakeTask">
                                 <i class="icon_close_alt2"></i>
                             </a>
 

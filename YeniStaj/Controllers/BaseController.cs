@@ -13,11 +13,13 @@ using YeniStaj.Repository;
 namespace YeniStaj.Controllers
 {
     
+    [Authorize]
     public class BaseController : Controller
     {
         MyContext db = new MyContext();
         // GET: Base
 
+       
         protected List<SelectListItem> GetUserList()
         {
             var data = new List<SelectListItem>();

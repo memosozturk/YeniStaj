@@ -16,6 +16,7 @@ using static YeniStaj.Identity.MembershipTools;
 
 namespace YeniStaj.Controllers
 {
+    [Authorize(Roles = "Admin,PoweredUser")]
     public class UserController : BaseController
     {
         // GET: User

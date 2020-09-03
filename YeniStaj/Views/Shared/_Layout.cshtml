@@ -84,11 +84,11 @@
                         <ul class="dropdown-menu extended logout">
 
                             <li class="eborder-top">
-                                <a href="@Url.Action("UserProfile","Account")"><i class="icon_profile"></i> My Profile</a>
+                                <a href="@Url.Action("UserProfile", "Account")"><i class="icon_profile"></i> My Profile</a>
                             </li>
 
                             <li>
-                                <a href="@Url.Action("Logout","Account")"><i class="icon_key_alt"></i> Log Out</a>
+                                <a href="@Url.Action("Logout", "Account")"><i class="icon_key_alt"></i> Log Out</a>
                             </li>
 
                         </ul>
@@ -110,48 +110,70 @@
                             <span>Users</span>
                         </a>
                     </li>
-                    <li class="sub-menu">
-                        <a href="javascript:;" class="">
-                          
-                                <i class="icon_document_alt"></i>
-                                <span>Project</span>
-                                <span class="menu-arrow arrow_carrot-right"></span>
-                            </a>
-                            <ul class="sub">
-                                <li><a class="" href="~/Project/Index/">Index</a></li>
-                                <li><a class="" href="~/Project/Export/">Export</a></li>
-                            </ul>
-                    </li>
-                    <li class="sub-menu">
-                        <a href="~/Task/Index/" class="">
-                            <i class="icon_desktop"></i>
-                            <span>Task</span>
-                            <span class="menu-arrow arrow_carrot-right"></span>
-                        </a>
-                        <ul class="sub">
-                            <li><a class="" href="~/Content/AdminLayout/general.html">Elements</a></li>
-                            <li><a class="" href="~/Content/AdminLayout/buttons.html">Buttons</a></li>
-                            <li><a class="" href="~/Content/AdminLayout/grids.html">Grids</a></li>
+                    @{ if (HttpContext.Current.User.IsInRole("User"))
+                        {
+
+
+                            <li class="sub-menu">
+                                <a href="~/Task/ProjeTask" class="">
+
+                                    <i class="icon_document_alt"></i>
+                                    <span>Proje Task</span>
+                                    <span class="menu-arrow arrow_carrot-right"></span>
+                                </a>
+
+                            </li>
+                        }}
+                    @{ if (HttpContext.Current.User.IsInRole("Admin"))
+                        {
+
+
+                            <li class="sub-menu">
+                                <a href="javascript:;" class="">
+
+                                    <i class="icon_document_alt"></i>
+                                    <span>Project</span>
+                                    <span class="menu-arrow arrow_carrot-right"></span>
+                                </a>
+                                <ul class="sub">
+                                    <li><a class="" href="~/Project/Index/">Index</a></li>
+                                    <li><a class="" href="~/Project/Export/">Export</a></li>
+                                </ul>
+                            </li>
+                        }}
+                    @{ if (HttpContext.Current.User.IsInRole("Admin"))
+                        {
+                            <li class="sub-menu">
+                                <a href="~/Task/Index/" class="">
+                                    <i class="icon_desktop"></i>
+                                    <span>Task</span>
+                                    <span class="menu-arrow arrow_carrot-right"></span>
+                                </a>
+                                <ul class="sub">
+                                    <li><a class="" href="~/Content/AdminLayout/general.html">Elements</a></li>
+                                    <li><a class="" href="~/Content/AdminLayout/buttons.html">Buttons</a></li>
+                                    <li><a class="" href="~/Content/AdminLayout/grids.html">Grids</a></li>
+                                </ul>
+                            </li>
+                            } }
+                            <li>
+                                <a class="" href="">
+                                    <i class="icon_genius"></i>
+                                    <span>gereksiz</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="" href="@Url.Action("UserProfile","Account")">
+                                    <i class="icon_piechart"></i>
+                                    <span>Profile</span>
+
+                                </a>
+
+                            </li>
+
+
+
                         </ul>
-                    </li>
-                    <li>
-                        <a class="" href="">
-                            <i class="icon_genius"></i>
-                            <span>gereksiz</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="" href="@Url.Action("UserProfile","Account")">
-                            <i class="icon_piechart"></i>
-                            <span>Profile</span>
-
-                        </a>
-
-                    </li>
-
-
-
-                </ul>
                 <!-- sidebar menu end-->
             </div>
         </aside>

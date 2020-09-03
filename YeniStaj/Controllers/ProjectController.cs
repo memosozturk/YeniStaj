@@ -10,6 +10,7 @@ using YeniStaj.Models.ViewModels;
 
 namespace YeniStaj.Controllers
 {
+    [Authorize(Roles = "Admin,PoweredUser")]
     public class ProjectController : BaseController
     {
         MyContext db = new MyContext();

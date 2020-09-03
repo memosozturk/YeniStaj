@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System;
-using System.Drawing;
 using System.Web;
 using YeniStaj.Models.Context;
 using YeniStaj.Models.Entities;
@@ -42,6 +41,28 @@ namespace YeniStaj.Identity
 
             }
             return $"{user.Name} {user.Surname}";
+        }
+        public static string GetUserRole(string userid)
+        {
+            User user;
+            var id = HttpContext.Current.User.Identity.GetUserId();
+            if (string.IsNullOrEmpty(userid))
+            {
+                return "";
+
+               
+            }
+            else
+            {
+                user = NewUserManager().FindById(userid);
+                if (user == null)
+                {
+                    return null;
+
+                }
+
+            }
+            return $"{user.Roles}";
         }
         public static String GetTaskStateName(int id)
         {

@@ -49,20 +49,25 @@
         {
             @Html.AntiForgeryToken()
         <div class="login-wrap">
+            <p>@ViewBag.Uyari</p>
             <p class="login-img"><i class="icon_lock_alt"></i></p>
-            <div class="input-group">
+            <div>
+                <div class="input-group">
 
-                @Html.LabelFor(x => x.LoginViewModel.Username, new { @class = "sr-only", name = "Username" })
-                <span class="input-group-addon"><i class="icon_profile"></i></span>
+                    @Html.LabelFor(x => x.LoginViewModel.Username, new { @class = "sr-only", name = "Username" })
+                    <span class="input-group-addon"><i class="icon_profile"></i></span>
 
-                @Html.TextBoxFor(x => x.LoginViewModel.Username, new { @class = "form-control", placeholder = "Kullanıcı Adı" })
+                    @Html.TextBoxFor(x => x.LoginViewModel.Username, new { @class = "form-control", placeholder = "Kullanıcı Adı", required = "required" })
+                    @Html.ValidationMessageFor(x => x.LoginViewModel.Username, "", new { @class = "text-danger " })
+                </div>
             </div>
             <div class="input-group">
 
                 @Html.LabelFor(x => x.LoginViewModel.Password, new { @class = "sr-only" })
                 <span class="input-group-addon"><i class="icon_key_alt"></i></span>
 
-                @Html.TextBoxFor(x => x.LoginViewModel.Password, new { @class = "form-control required", placeholder = "Şifre", Type = "password" })
+                @Html.TextBoxFor(x => x.LoginViewModel.Password, new { @class = "form-control required", placeholder = "Şifre", Type = "password", required = "required" })
+                @Html.ValidationMessageFor(x => x.LoginViewModel.Password, "", new { @class = "text-danger " })
             </div>
             <div class="form-check">
                 <label for="RememberMe" class="css-input switch switch-sm switch-app">

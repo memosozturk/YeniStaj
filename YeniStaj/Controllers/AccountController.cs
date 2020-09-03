@@ -44,7 +44,8 @@ namespace YeniStaj.Controllers
                 if (user==null)
                 {
                     ModelState.AddModelError("","Kullanıcı Adı veya Şifre Hatalı");
-                    return View("Index",model);
+                    ViewBag.Uyari = "Kullanıcı Adı veya Şifre Yanlış";
+                    return View("Login",model);
 
                 }
                 var autManager = HttpContext.GetOwinContext().Authentication;
