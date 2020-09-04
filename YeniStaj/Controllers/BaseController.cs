@@ -52,8 +52,8 @@ namespace YeniStaj.Controllers
         }
         protected List<SelectListItem> GetTaskStateSelectList()
         {
-            List<SelectListItem> degerler = (from x in db.TaskStates.ToList()
-                                             select new SelectListItem
+            List<SelectListItem> degerler = (from x in db.TaskStates.ToList() 
+                                             select new SelectListItem 
                                              {
                                                  Text = x.TaskDurumu,
                                                  Value = x.TaskStateId.ToString()

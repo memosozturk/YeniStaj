@@ -77,10 +77,16 @@ namespace YeniStaj.Identity
         }
         public static String GetProjectName(int id)
         {
+            if (id==0)
+            {
+                return "proje yok";
+            }
+            else { 
             Models.Entities.Project project;
             project = db.Projects.Find(id);
             string projeadii = project.ProjeAdi;
             return projeadii;
+        }
         }
 
     }

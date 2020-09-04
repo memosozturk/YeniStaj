@@ -915,6 +915,10 @@
     <Content Include="Views\Task\WaitingTask.cshtml" />
     <Content Include="Views\Task\WorkingTask.cshtml" />
     <Content Include="Views\Task\TaskDeliver.cshtml" />
+    <Content Include="Views\Task\FinishedTask.cshtml" />
+    <Content Include="Views\User\Export.cshtml" />
+    <Content Include="Views\Project\Export.cshtml" />
+    <Content Include="Views\Task\Export.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

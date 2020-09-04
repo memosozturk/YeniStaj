@@ -1,0 +1,62 @@
+﻿@model List<YeniStaj.Models.IdentityModels.User>
+@using YeniStaj.Identity
+@{
+    ViewBag.Title = "Export ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="card">
+    <div class="card-header">
+       
+    </div>
+    <div class="card-block">
+        <!-- DataTables init on table by adding .js-dataTable-full class, functionality initialized in js/pages/base_tables_datatables.js -->
+        <table id="example" class="table table-bordered table-striped table-vcenter  nowrap display dataTable">
+            <thead>
+                <tr>
+                    <th class="text-center">#</th>
+                    <th>Avatar</th>
+                    <th>UserName</th>
+                    <th>Name</th>
+                    <th>Surname</th>
+                    <th>Email</th>
+                    <th>Phone Number</th>
+                    <th>
+                        Proje Adı
+                    </th>
+                   
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < Model.Count; i++)
+                {
+                    var data = Model[i];
+                    <tr class="">
+                        <td class="text-center">@(i + 1)</td>
+
+                        <td class="text-center">
+                            <img src="@(string.IsNullOrEmpty(data.AvatarPath)?"~/content/assets/img/avatars/avatar3.jpg":data.AvatarPath)" class="img-avatar-96" width="100" height="100" />
+                        </td>
+                        <td class="font-500">@data.UserName</td>
+                        <td>@data.Name</td>
+
+                        <td>@data.Surname</td>
+                        <td>@data.Email</td>
+                        <td>@data.PhoneNumber</td>
+
+                        <td>@MembershipTools.GetProjectName(Convert.ToInt32(data.Projeid))</td>
+                        
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <!-- .card-block -->
+</div>
+
+
+
+
+
+

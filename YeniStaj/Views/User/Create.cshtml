@@ -55,7 +55,17 @@
                             @Html.TextBoxFor(x => x.RegisterViewModel.ConfirmPassword, new { @class = "form-control", Type = "password" })
                         </div>
                         
+                        
                     </div>
+                    <div class="form-group">
+
+                        @Html.Label("Roles", new { @class = "col-md-3 control-label" })
+                        <div class="col-md-7">
+                            @Html.DropDownList("Roles", (List<SelectListItem>)ViewBag.RoleList, new { @class = "js-select2 form-control" })
+                        </div>
+                        
+                    </div>
+                    
                     <div class="row narrow-gutter">
                         <div class="col-xs-6">
                             <button type="submit" class="btn btn-app btn-block">Kullanıcı Oluştur</button>
@@ -72,11 +82,6 @@
                 {
                     @Html.AntiForgeryToken()
                    
-                    @Html.Label("Roles", new { @class = "col-md-3 control-label" })
-                    <div class="col-md-7">
-                        @Html.DropDownList("Roles", (List<SelectListItem>)ViewBag.RoleList, new { @class = "js-select2 form-control" })
-                    </div>
-                    <input type="submit" value="Rol Güncelle" class="btn btn-action" />
                 }
 
             </div>

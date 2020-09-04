@@ -35,7 +35,6 @@ namespace YeniStaj.Models.ViewModels
         [DisplayName("Kullanıcı Adı")]
         [StringLength(30,MinimumLength =5, ErrorMessage = "Kullanıcı adınız 5 Karakterden Kısa 30 Karakterden Uzun olmamalıdır!")]
         public String Username { get; set; }
-        public int? Projeid { get; set; }
-        public Project ProjectUser { get; set; }
+      
     }
 }

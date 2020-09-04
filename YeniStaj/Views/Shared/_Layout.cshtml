@@ -104,32 +104,22 @@
             <div id="sidebar" class="nav-collapse ">
                 <!-- sidebar menu start-->
                 <ul class="sidebar-menu">
-                    <li class="active">
-                        <a class="" href="/User/Index/">
-                            <i class="icon_house_alt"></i>
-                            <span>Users</span>
-                        </a>
-                    </li>
-                    @{ if (HttpContext.Current.User.IsInRole("User"))
+                    @{ if (HttpContext.Current.User.IsInRole("Admin") || HttpContext.Current.User.IsInRole("PoweredUser"))
                         {
-
-
                             <li class="sub-menu">
-                                <a href="~/Task/ProjeTask" class="">
-
-                                    <i class="icon_document_alt"></i>
-                                    <span>Proje Task</span>
-                                    <span class="menu-arrow arrow_carrot-right"></span>
+                                <a class="" href="/User/Index/">
+                                    <i class="icon_house_alt"></i>
+                                    <span>Users</span>
                                 </a>
-
                             </li>
                         }}
-                    @{ if (HttpContext.Current.User.IsInRole("Admin"))
+
+                    @{ if (HttpContext.Current.User.IsInRole("Admin") || HttpContext.Current.User.IsInRole("PoweredUser"))
                         {
 
 
                             <li class="sub-menu">
-                                <a href="javascript:;" class="">
+                                <a href="~/Project/Index/" class="">
 
                                     <i class="icon_document_alt"></i>
                                     <span>Project</span>
@@ -141,7 +131,9 @@
                                 </ul>
                             </li>
                         }}
-                    @{ if (HttpContext.Current.User.IsInRole("Admin"))
+               
+
+                    @{ if (HttpContext.Current.User.IsInRole("Admin") || HttpContext.Current.User.IsInRole("PoweredUser"))
                         {
                             <li class="sub-menu">
                                 <a href="~/Task/Index/" class="">
@@ -149,31 +141,58 @@
                                     <span>Task</span>
                                     <span class="menu-arrow arrow_carrot-right"></span>
                                 </a>
-                                <ul class="sub">
-                                    <li><a class="" href="~/Content/AdminLayout/general.html">Elements</a></li>
-                                    <li><a class="" href="~/Content/AdminLayout/buttons.html">Buttons</a></li>
-                                    <li><a class="" href="~/Content/AdminLayout/grids.html">Grids</a></li>
-                                </ul>
-                            </li>
-                            } }
-                            <li>
-                                <a class="" href="">
-                                    <i class="icon_genius"></i>
-                                    <span>gereksiz</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="" href="@Url.Action("UserProfile","Account")">
-                                    <i class="icon_piechart"></i>
-                                    <span>Profile</span>
-
-                                </a>
 
                             </li>
+                        } }
+
+
+                    <li class="sub-menu">
+                        <a href="~/Task/ProjeTask/" class="">
+                            <i class="icon_desktop"></i>
+                            <span>Proje Taskları</span>
+                            <span class="menu-arrow arrow_carrot-right"></span>
+                        </a>
+
+                    </li>
+                    <li class="sub-menu">
+                        <a href="~/Task/WaitingTask/" class="">
+                            <i class="icon_desktop"></i>
+                            <span>Bekleyen Tasklar</span>
+                            <span class="menu-arrow arrow_carrot-right"></span>
+                        </a>
+
+                    </li>
+                    <li class="sub-menu">
+                        <a href="~/Task/WorkingTask/" class="">
+                            <i class="icon_desktop"></i>
+                            <span>Çalışılan Tasklar</span>
+                            <span class="menu-arrow arrow_carrot-right"></span>
+                        </a>
+
+                    </li>
+                    <li class="sub-menu">
+                        <a href="~/Task/FinishedTask/" class="">
+                            <i class="icon_desktop"></i>
+                            <span>Biten Tasklar</span>
+                            <span class="menu-arrow arrow_carrot-right"></span>
+                        </a>
+
+                    </li>
 
 
 
-                        </ul>
+                    <li>
+                        <a class="" href="@Url.Action("UserProfile","Account")">
+                            <i class="icon_piechart"></i>
+                            <span>Profile</span>
+
+                        </a>
+
+                    </li>
+
+
+
+                </ul>
                 <!-- sidebar menu end-->
             </div>
         </aside>

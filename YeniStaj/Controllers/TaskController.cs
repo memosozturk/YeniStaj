@@ -25,6 +25,11 @@ namespace YeniStaj.Controllers
             var sorgu = db.Tasks.ToList();
             return View(sorgu);
         }
+        public ActionResult Export()
+        {
+            var sorgu = db.Tasks.ToList();
+            return View(sorgu);
+        }
 
         // GET: Task/Details/5
         [Authorize(Roles = "Admin,PoweredUser")]

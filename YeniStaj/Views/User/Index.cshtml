@@ -50,15 +50,15 @@
                         <td>@MembershipTools.GetProjectName(Convert.ToInt32(data.Projeid))</td>
                         <td class="text-center">
                             <div class="btn-group">
-                                <button class="btn btn-xs btn-default btnsendcode" name="@data.Id" type="button" title="Delete">
+                                <a href="@Url.Action("DeleteUser","User", new {id = data.Id})" class="btn btn-xs btn-default" title="Delete User">
                                     <i class="icon_close_alt2"></i>
-                                </button>
-                               
-                                
-                                <a href="@Url.Action("EditUser","User", new {id = data.Id})" class="btn btn-xs btn-default" title="Edit User">
-                                    <i class="ion-edit"></i>
-                                </a>
-                            </div>
+                                    </a>
+
+
+                                    <a href="@Url.Action("EditUser","User", new {id = data.Id})" class="btn btn-xs btn-default" title="Edit User">
+                                        <i class="ion-edit"></i>
+                                    </a>
+</div>
                         </td>
                     </tr>
                 }

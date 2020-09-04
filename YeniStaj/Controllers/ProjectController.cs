@@ -21,6 +21,11 @@ namespace YeniStaj.Controllers
             var sorgu = db.Projects.ToList();
             return View(sorgu);
         }
+        public ActionResult Export()
+        {
+            var sorgu = db.Projects.ToList();
+            return View(sorgu);
+        }
 
         
         

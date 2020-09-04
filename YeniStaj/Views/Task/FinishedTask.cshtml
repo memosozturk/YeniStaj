@@ -1,0 +1,56 @@
+﻿@Model YeniStaj.Models.ViewModels.TaskViewModel
+@using YeniStaj.Identity
+
+    @{
+        ViewBag.Title = "FinishedTask";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+    <h2>FinishedTask</h2>
+
+    <div class="card-block">
+        <!-- DataTables init on table by adding .js-dataTable-full class, functionality initialized in js/pages/base_tables_datatables.js -->
+        <table id="example" class="table table-bordered table-striped table-vcenter  nowrap display dataTable">
+            <thead>
+                <tr>
+                    <th class="text-center">#</th>
+                    <td>Task Baslik</td>
+                    <td>Task Aciklama</td>
+                    <td>Proje Adı</td>
+                    <td>Task Olusturma Tarihi</td>
+                    <td>Task Teslim Tarihi</td>
+                    <td>Task Durumu</td>
+                    <td>Username</td>
+                   <td>Geri Bildirim</td>
+                    <td>Geri Bildirim Tarihi</td>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < Model.Count; i++)
+                {
+                    var data = Model[i];
+                    <tr class="" :"bg-red")">
+                        <td class="text-center">@(i + 1)</td>
+
+
+
+                        <td>@data.TaskBaslik</td>
+                        <td>@data.TaskAciklama</td>
+                        <td>@MembershipTools.GetProjectName(Convert.ToInt32(data.Projeid))</td>
+
+                        <td>@data.TaskOlusturmaTarihi</td>
+                        <td>@data.TaskTeslimTarihi</td>
+                        <td>@MembershipTools.GetTaskStateName(Convert.ToInt32(data.TaskStateId))</td>
+                        <td>@data.Username</td>
+                        <td>@data.GeriBildirim</td>
+                        <td>@data.GeribildirimTarihi</td>
+
+
+
+
+                        
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>

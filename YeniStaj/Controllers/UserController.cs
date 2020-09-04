@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.IO;
 using System.Linq;
+using System.Net;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading.Tasks;
 using System.Web.Helpers;
 using System.Web.Mvc;
@@ -22,7 +24,12 @@ namespace YeniStaj.Controllers
         // GET: User
         public ActionResult Index()
         {
-            return View(NewUserStore().Users.ToList());
+          
+            return View(NewUserManager().Users.ToList());
+        }
+        public ActionResult Export()
+        {
+            return View(NewUserManager().Users.ToList());
         }
         // GET: User/Details/5
         public ActionResult Details(int id)
@@ -132,6 +139,7 @@ namespace YeniStaj.Controllers
 
                     System.IO.File.Delete(Server.MapPath(oldPath));
                 }
+                user.AvatarPath = model.AvatarPath;
                 await userManager.UpdateAsync(user);
                 ViewBag.ProjeList = GetProjectSelectList();
                 TempData["Message"] = "Güncelleme işlemi başarılı";
@@ -198,7 +206,7 @@ namespace YeniStaj.Controllers
             ViewBag.RoleList = roller;
           
 
-            ViewBag.ProjeList= GetProjectSelectList();
+            
 
             return View();
 
@@ -276,26 +284,48 @@ namespace YeniStaj.Controllers
             }
         }
 
-    // GET: User/Delete/5
-    public ActionResult Delete(int id)
-        {
-            return View();
-        }
+        // GET: User/Delete/5
 
+        [HttpGet]
+        public ActionResult DeleteUser(string id)
+        {
+            var userManager = NewUserManager();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            var user = userManager.FindById(id);
+
+            var result = userManager.Delete(user);
+            if (result.Succeeded)
+            {
+
+
+                return RedirectToAction("index");
+            }
+            return View("index");
+
+        }
         // POST: User/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult DeleteUsera(string id)
         {
-            try
+            var userManager = NewUserManager();
+            if (id == null)
             {
-                // TODO: Add delete logic here
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            var user =  userManager.FindById(id);
 
-                return RedirectToAction("Index");
-            }
-            catch
+            var result =  userManager.Delete(user);
+            if (result.Succeeded)
             {
-                return View();
+
+           
+            return RedirectToAction("index");
             }
+            return View("index");
+
         }
     }
 }
