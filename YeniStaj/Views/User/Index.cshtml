@@ -25,8 +25,7 @@
                     <th>Surname</th>
                     <th>Email</th>
                     <th>Phone Number</th>
-                    <th>
-                        Proje Adı                    </th>
+                    @*<th>Proje Adı</th>*@
                     <th class="text-center" style="width: 10%;">Actions</th>
                 </tr>
             </thead>
@@ -47,7 +46,7 @@
                         <td>@data.Email</td>
                         <td>@data.PhoneNumber</td>
                         
-                        <td>@MembershipTools.GetProjectName(Convert.ToInt32(data.Projeid))</td>
+                        @*<td>@MembershipTools.GetProjectName(Convert.ToInt32(data.Projeid))</td>*@
                         <td class="text-center">
                             <div class="btn-group">
                                 <a href="@Url.Action("DeleteUser","User", new {id = data.Id})" class="btn btn-xs btn-default" title="Delete User">

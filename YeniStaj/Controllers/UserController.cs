@@ -1,17 +1,13 @@
 ﻿using Microsoft.AspNet.Identity;
 using System;
-using System.Collections.Generic;
-using System.Data.Entity;
 using System.IO;
 using System.Linq;
 using System.Net;
-using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading.Tasks;
 using System.Web.Helpers;
 using System.Web.Mvc;
 using System.Web.UI.WebControls;
 using YeniStaj.Helpers;
-using YeniStaj.Models.Entities;
 using YeniStaj.Models.IdentityModels;
 using YeniStaj.Models.ViewModels;
 using static YeniStaj.Identity.MembershipTools;

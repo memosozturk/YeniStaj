@@ -1,16 +1,13 @@
 ﻿using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Helpers;
 using System.Web.Mvc;
-using System.Web.UI.WebControls;
 using YeniStaj.Helpers;
-using YeniStaj.Models.Context;
 using YeniStaj.Models.IdentityModels;
 using YeniStaj.Models.ViewModels;
 using static YeniStaj.Identity.MembershipTools;
@@ -216,7 +213,7 @@ namespace YeniStaj.Controllers
                 user.PhoneNumber = model.UserProfileViewModel.PhoneNumber;
                 if (user.Email != model.UserProfileViewModel.Email)
                 {
-                    //todo tekrar aktivasyon maili gönderilmeli. rolü de aktif olmamış role çevrilmeli.
+                   
                 }
                 user.Email = model.UserProfileViewModel.Email;
 
@@ -299,7 +296,7 @@ namespace YeniStaj.Controllers
 
                 if (result.Succeeded)
                 {
-                    //todo kullanıcıyı bilgilendiren bir mail atılır
+                  
                     return RedirectToAction("Logout", "Account");
                 }
                 else
