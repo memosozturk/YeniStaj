@@ -7,7 +7,7 @@
 
 <div class="card">
     <div class="card-header">
-        <a href="@Url.Action("Create","Task")"><i class="icon_profile"></i> Create Project</a>
+        <a href="@Url.Action("Create","Task")"><i class="icon_profile"></i> Create Task</a>
         <a href="@Url.Action("Export","Task")">
             <i class="icon_book_alt"></i>Export
         </a>
@@ -23,7 +23,7 @@
                     <td>Proje Adı</td>
                     <td>Task Olusturma Tarihi</td>
                     <td>Task Teslim Tarihi</td>
-                    <td>Task Durumu</td>
+                    @*<td>Task Durumu</td>*@
                     <th class="text-center" style="width: 10%;">Actions</th>
                 </tr>
             </thead>
@@ -42,7 +42,7 @@
                 
                     <td>@data.TaskOlusturmaTarihi</td>
                     <td>@data.TaskTeslimTarihi</td>
-                    <td>@MembershipTools.GetTaskStateName(Convert.ToInt32(data.TaskStateId))</td>
+                    @*<td>@MembershipTools.GetTaskStateName(Convert.ToInt32(data.TaskStateId))</td>*@
 
 
 
